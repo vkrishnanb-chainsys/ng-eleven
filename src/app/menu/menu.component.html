@@ -1,0 +1,21 @@
+<div>
+    <ul clas="nav nav-pills">
+        <li> <a href="">Home</a> </li>
+        <li><a href="news">News</a></li>
+        <li><a href="books"> Book List</a></li>
+        <li><a href="addbook"> Add a new Book</a></li>
+    </ul>
+    <app-onchange-box [data]='bName'></app-onchange-box>
+    <app-lifecycle [bookName]="bName" [book]="book"></app-lifecycle>
+</div>
+<div>
+    <button (click)="createComponent()">lifecycle component</button>
+    <button (click)="destroyComponent()">destroy component</button>
+    <div>
+
+        <button class="btn btn-primary"
+            (click)="onBookNameChangeClick('lifeofpie')">Change Book
+            Name</button>
+    </div>
+    <ng-template #TextContainer></ng-template>
+</div>
