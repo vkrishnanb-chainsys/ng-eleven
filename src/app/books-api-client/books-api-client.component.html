@@ -1,0 +1,14 @@
+<div class="list-group">
+    <div>
+        <button class="btn btn-danger" (click)="onLoad()">Load</button>
+    </div>
+    <div *ngFor="let item of books ; let idx=index; let isFirst=first"
+        class="list-group-item">
+        <h4>IsFirst: {{isFirst}}</h4>
+        <span class="badge" [innerText]=idx+1></span>
+        <h4>{{item.id | uppercase}} - </h4>
+        <p>{{item.value.title}} </p>
+        <p>{{item.value.author}} </p>
+        <p>{{item.value.email}} </p>
+    </div><!-- end of For -->
+</div><!-- end of list group -->

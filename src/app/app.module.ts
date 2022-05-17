@@ -24,13 +24,17 @@ import { BookformComponent } from './bookform/bookform.component'
 import {BooksResolver} from './books.resolver';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { OnchangeBoxComponent } from './onchange-box/onchange-box.component';
+import { BooksApiClientComponent } from './books-api-client/books-api-client.component';
+import { HttpModule } from '@angular/http';
+
 const routes: Routes =[
   {path: '', component: HomeComponent},
   {path: 'news', component: NewsComponent},
   {path: 'lifecycle', component: LifecycleComponent},
   {path: 'books', component: BookCatlogComponent,
-resolve: {books: BooksResolver}},
+        resolve: {books: BooksResolver}},
   {path: 'addbook', component: BookformComponent},
+  {path: 'apiClient', component: BooksApiClientComponent},
 
 ];
 @NgModule({
@@ -39,13 +43,14 @@ resolve: {books: BooksResolver}},
     CustomerFormComponent, CountDisplayComponent, HitButtonComponent,
     CounterAppComponent, EmployeeFormComponent, CustomerReactiveformbComponent,
     BookListComponent, PriceDiscountPipe, BookComponent, TabComponent, BookCatlogComponent,
-    NewsComponent, MenuComponent, BookformComponent, LifecycleComponent,OnchangeBoxComponent
+    NewsComponent, MenuComponent, BookformComponent, LifecycleComponent,OnchangeBoxComponent, BooksApiClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule ,
+    HttpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ BooksResolver],
